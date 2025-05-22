@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenSwift - Eco-Friendly Delivery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4fff6;
+      color: #2e7d32;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      text-align: center;
+      padding: 1rem;
+      background-color: #a5d6a7;
+    }
+    nav a {
+      color: #1b5e20;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #43a047;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .feature {
+      flex: 1 1 250px;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .feature img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    /* Booking Form */
+    #booking {
+      display: none;
+      margin-top: 3rem;
+    }
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #a5d6a7;
+      border-radius: 5px;
+    }
+    button.submit-btn {
+      margin-top: 1.5rem;
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #confirmation {
+      text-align: center;
+      color: #2e7d32;
+      font-weight: bold;
+      display: none;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GreenSwift Delivery</h1>
+    <p>Fast, clean, and eco-conscious deliveries for a greener tomorrow</p>
+  </header>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#booking">Book</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Your Eco-Friendly Delivery Partner</h2>
+    <button id="startBookingBtn">Initiate Delivery</button>
+  </div>
+
+  <div class="section" id="features">
+    <h2>Why Choose GreenSwift?</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="./bikeslcar.png" alt="Electric Bike">
+        <h3>Electric Bikes</h3>
+        <p>We deliver using electric bikes to reduce carbon emissions in urban areas.</p>
+      </div>
+      <div class="feature">
+        <img src="./bikeslcar.png" alt="Fast Delivery">
+        <h3>Fast & Reliable</h3>
+        <p>Deliveries completed within hours across cities with real-time tracking.</p>
+      </div>
+      <div class="feature">
+        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=600&q=60" alt="Green Mission">
+        <h3>Eco-Driven Mission</h3>
+        <p>Every delivery contributes to tree planting and local sustainability projects.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="booking">
+    <h2>Book Your Delivery</h2>
+    <form id="bookingForm">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="number" id="phone" required />
+
+      <label for="address">Pickup Address</label>
+      <textarea id="address" rows="2" required></textarea>
+
+      <label for="destination">Delivery Destination</label>
+      <textarea id="destination" rows="2" required></textarea>
+
+      <label for="date">Preferred Delivery Date</label>
+      <input type="date" id="date" required />
+
+      <label for="package">Package Type</label>
+      <select id="package" required>
+        <option value="">--Select--</option>
+        <option value="documents">Documents</option>
+        <option value="groceries">Groceries</option>
+        <option value="electronics">Electronics</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="weight">Estimated Weight (kg)</label>
+      <input type="number" id="weight" step="0.1" required />
+
+      <button type="submit" class="submit-btn">Submit Booking</button>
+      <p id="confirmation">✅ Thank you! Your booking has been received.</p>
+    </form>
+  </div>
+
+  <footer id="contact">
+    <p>&copy; 2025 GreenSwift Delivery. Eco-Delivery with Purpose 🌱</p>
+  </footer>
+
+  <script>
+    <!-- const bookingForm = document.getElementById('bookingForm');
+    const confirmation = document.getElementById('confirmation');
+    const startBookingBtn = document.getElementById('startBookingBtn');
+    const bookingSection = document.getElementById('booking');
+
+    // Scroll to form section and show form
+    startBookingBtn.addEventListener('click', () => {
+      bookingSection.style.display = 'block';
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Form submit logic
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // simple front-end validation already enforced by 'required' attributes
+      confirmation.style.display = 'block';
+      bookingForm.reset();
+    });
+  </script> -->
+
+</body>
+</html>
+
